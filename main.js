@@ -38,7 +38,7 @@ var countDown = function() {
 var startTimer = function(event) {
   $workingOn.textContent = ' ' + $task.value;
   $workingOn.classList.add('workin');
-  // minutes = 24;
+  minutes = 25;
   seconds = 60;
   timerId = setInterval(countDown, 10);
   $startBtn.removeEventListener('click', startTimer);
