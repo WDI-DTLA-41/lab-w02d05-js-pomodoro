@@ -1,3 +1,16 @@
 body {
-  background: lightblue;
+  background: powderblue;
+  font-family: Arial, sans-serif;
+}
+input {
+  width: 300px;
+  padding: 4px;
+}
+button{
+  padding: 4px;
+}
+.timer {
+  background: gold;
+  height: 50px;
+  width: 30%;
 }
