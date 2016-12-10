@@ -1,0 +1,33 @@
+body {
+  background: lightgreen;
+}
+
+.taskName {
+background: lightgrey;
+}
+
+button {
+  display: inline-block;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+h1 {
+  color: white;
+}
+
+.countDown {
+  color: white;
+  font-size: 150px;
+  display: block;
+
+}
+
+li {
+  color:white;
+  font-size: 25px;
+}
+
+.working {
+  margin-left: 15%;
+}
