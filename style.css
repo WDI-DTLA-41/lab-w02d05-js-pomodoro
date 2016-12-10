@@ -1,0 +1,14 @@
+h1, h3, h6 {
+  display: inline-block;
+  /*float: left;*/
+}
+.timer {
+  float: right;
+}
+.main {
+  margin: 0 auto;
+  width: 50%;
+}
+.task-input {
+  float: right;
+}
