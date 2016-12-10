@@ -15,7 +15,7 @@ var displayTaskandStartTimer = function () {
   }
   createTaskandTimer();
   // Start Timer
-  startTimer();
+  clockStart();
 
 };
 
@@ -23,27 +23,30 @@ var displayTaskandStartTimer = function () {
 $startButton.addEventListener('click', displayTaskandStartTimer);
 
 
-// Create timer
-var startTimer = function () {
+// Start Create timer //
+var clockStart = function () {
   timerSecondId = setInterval(countDownSeconds,1000);
-  timerMinuteId = setInterval(countDownMinutes,1000);
+  timerMinuteId = setInterval(countDownMinutes,60000);
 }
 
 //timer Second logic
-var timerSecond = 5;
 var countDownSeconds = function() {
   $timerSeconds = document.getElementById('timerSeconds');
   console.log(timerSecond);
   timerSecond = timerSecond - 1;
   $timerSeconds.textContent = timerSecond;
   if (timerSecond === 0) {
-    clearInterval(timerSecondId);
+    if (timerMinute !== 0) {
+      timerSecond = 60;
+    } else {
+      clearInterval(timerSecondId);
+      console.log('stop here');
+    }
   }
   return timerSecond;
 };
 
 //timer Minute logic
-var timerMinute = 5;
 var countDownMinutes = function() {
   $timerMinutes = document.getElementById('timerMinutes');
   console.log(timerMinutes);
@@ -54,6 +57,8 @@ var countDownMinutes = function() {
   }
   return timerMinute;
 };
+
+// End Create Timer //
 
 // Create Task and timer view
 var createTaskandTimer = function () {
@@ -71,6 +76,8 @@ var createTaskandTimer = function () {
 
   // create h2
   $newh2 = document.createElement('h2');
-  $newh2.innerHTML = 'Time Left: <span id="timerMinutes"></span> minutes <span id="timerSeconds"></span> seconds';
+  $newh2.innerHTML = 'Time Left: <span id="timerMinutes">24</span> minutes <span id="timerSeconds">59</span> seconds';
   $timeKeeper.appendChild($newh2);
+  timerMinute = document.getElementById('timerMinutes').innerHTML;
+  timerSecond = document.getElementById('timerSeconds').innerHTML;
 };
