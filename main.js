@@ -10,6 +10,9 @@ $timeKeeper = document.querySelector('#time-keeper');
 
 
 var displayTaskandTimer = function () {
+  if ($inputBox.value === "") {
+    return false;
+  }
 // Create h1
 $newh1 = document.createElement('h1');
 $newh1.textContent="Currently working on..."
@@ -18,7 +21,8 @@ $timeKeeper.appendChild($newh1)
 //create h3
 $newh3 = document.createElement('h3');
 $newh3.setAttribute('id', 'currentTask');
-$newh3.textContent="//input box value//";
+$newh3.textContent=$inputBox.value;
+$inputBox.value = null;
 $timeKeeper.appendChild($newh3);
 
 // create h2
