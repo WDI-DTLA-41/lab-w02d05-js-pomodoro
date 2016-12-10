@@ -24,3 +24,10 @@ var currentTask = function () {
   $task.value = null;
 
 }
+
+time = 0;
+// Create Timer
+var countDown = function {
+  console.log(time);
+  time = time - 1;
+}
