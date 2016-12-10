@@ -26,20 +26,33 @@ $startButton.addEventListener('click', displayTaskandStartTimer);
 // Create timer
 var startTimer = function () {
   timerSecondId = setInterval(countDownSeconds,1000);
+  timerMinuteId = setInterval(countDownMinutes,1000);
 }
 
-//timer Second
-var timerMinute = 25;
-var timerSecond = 59;
+//timer Second logic
+var timerSecond = 5;
 var countDownSeconds = function() {
   $timerSeconds = document.getElementById('timerSeconds');
   console.log(timerSecond);
   timerSecond = timerSecond - 1;
   $timerSeconds.textContent = timerSecond;
   if (timerSecond === 0) {
-    clearInterval(timerId);
+    clearInterval(timerSecondId);
   }
   return timerSecond;
+};
+
+//timer Minute logic
+var timerMinute = 5;
+var countDownMinutes = function() {
+  $timerMinutes = document.getElementById('timerMinutes');
+  console.log(timerMinutes);
+  timerMinute = timerMinute - 1;
+  $timerMinutes.textContent = timerMinute;
+  if (timerMinute === 0) {
+    clearInterval(timerMinuteId);
+  }
+  return timerMinute;
 };
 
 // Create Task and timer view
