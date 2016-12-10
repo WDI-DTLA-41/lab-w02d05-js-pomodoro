@@ -15,6 +15,8 @@ var displayTaskandStartTimer = function () {
   }
   createTaskandTimer();
   // Start Timer
+  $timerSecondsSpan = document.getElementById('timerSeconds');
+  $timerMinutesSpan = document.getElementById('timerMinutes');
   clockStart();
 
 };
@@ -25,38 +27,41 @@ $startButton.addEventListener('click', displayTaskandStartTimer);
 
 // Start Create timer //
 var clockStart = function () {
-  timerSecondId = setInterval(countDownSeconds,1000);
-  timerMinuteId = setInterval(countDownMinutes,60000);
+  clockId = setInterval(countDown,1000);
 }
 
 //timer Second logic
-var countDownSeconds = function() {
-  $timerSeconds = document.getElementById('timerSeconds');
-  console.log(timerSecond);
-  timerSecond = timerSecond - 1;
-  $timerSeconds.textContent = timerSecond;
-  if (timerSecond === 0) {
-    if (timerMinute !== 0) {
-      timerSecond = 60;
-    } else {
-      clearInterval(timerSecondId);
-      console.log('stop here');
-    }
-  }
-  return timerSecond;
+var countDown = function() {
+  console.log('Time: ' + timerMinutes + ' Minutes ' + timerSeconds + ' Seconds');
+  if (timerMinutes !== 0 && timerSeconds == 0) {
+    timerSeconds = 59;
+    $timerSecondsSpan.innerHTML = timerSeconds;
+    timerMinutes = timerMinutes - 1;
+    $timerMinutesSpan.innerHTML = timerMinutes;
+    console.log ('minutes are not 0 seconds are 0');
+    return true;
+  };
+
+  if (timerMinutes !== 0 && timerSeconds !== 0) {
+    console.log ('not zero for both');
+    timerSeconds = timerSeconds - 1;
+    $timerSecondsSpan.innerHTML = timerSeconds;
+    return true;
+  };
+
+  if (timerMinutes == 0 && timerSeconds !== 0) {
+      console.log ('minutes are zero seconds are not');
+      timerSeconds = timerSeconds - 1;
+      $timerSecondsSpan.innerHTML = timerSeconds;
+      return true;
+      } else {
+        console.log('stop here');
+        clearInterval(clockId);
+      };
+
+  return timerSeconds;
 };
 
-//timer Minute logic
-var countDownMinutes = function() {
-  $timerMinutes = document.getElementById('timerMinutes');
-  console.log(timerMinutes);
-  timerMinute = timerMinute - 1;
-  $timerMinutes.textContent = timerMinute;
-  if (timerMinute === 0) {
-    clearInterval(timerMinuteId);
-  }
-  return timerMinute;
-};
 
 // End Create Timer //
 
@@ -76,8 +81,10 @@ var createTaskandTimer = function () {
 
   // create h2
   $newh2 = document.createElement('h2');
-  $newh2.innerHTML = 'Time Left: <span id="timerMinutes">24</span> minutes <span id="timerSeconds">59</span> seconds';
+  $newh2.innerHTML = 'Time Left: <span id="timerMinutes"></span> minutes <span id="timerSeconds"></span> seconds';
   $timeKeeper.appendChild($newh2);
-  timerMinute = document.getElementById('timerMinutes').innerHTML;
-  timerSecond = document.getElementById('timerSeconds').innerHTML;
+  timerMinutes = 25;
+  timerSeconds = 0;
+  document.getElementById('timerMinutes').innerHTML = timerMinutes;
+  document.getElementById('timerSeconds').innerHTML = timerSeconds;
 };
