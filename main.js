@@ -4,7 +4,7 @@ var $workingOn = document.querySelector('#task');
 var $minutes = document.querySelector('#minutes');
 var $seconds = document.querySelector('#seconds');
 var timerId = null;
-var minutes = 24;
+var minutes = 25;
 var seconds = 60;
 
 var countDown = function() {
@@ -16,9 +16,15 @@ var countDown = function() {
   }
   if (seconds === 0) {
     seconds = 60;
+  }
+  if (seconds === 59) {
     minutes -= 1;
   }
-  $minutes.innerHTML = minutes;
+  if (minutes < 10) {
+    $minutes.innerHTML = '0' + minutes;
+  } else {
+    $minutes.innerHTML = minutes;
+  }
   if (minutes === 0 && seconds === 1) {
     $seconds.innerHTML = '00';
     clearInterval(timerId);
@@ -31,17 +37,11 @@ var countDown = function() {
 
 var startTimer = function(event) {
   $workingOn.textContent = ' ' + $task.value;
-  minutes = 24;
+  $workingOn.classList.add('workin');
+  // minutes = 24;
   seconds = 60;
-  timerId = setInterval(countDown, 1000);
+  timerId = setInterval(countDown, 10);
   $startBtn.removeEventListener('click', startTimer);
 }
-
-// // while (minutes > 0) {
-// countdown seconds from 60 to 0
-// }
-// }
-
-
 
 $startBtn.addEventListener('click', startTimer);
