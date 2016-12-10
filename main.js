@@ -1,33 +1,25 @@
 console.log("hi from js")
 
-// click start button do things
-// will need event listener and function to do things
-$startbtn = document.querySelector('#start-button');
+// Input Box
+$inputBox = document.querySelector('#input-box');
+// Start Button
+$startButton = document.querySelector('#start-button');
 
-// Function to start Timer
-var startTimer = function (event) {
-  currentTask();
-};
+// Time-Keeper area
+$timeKeeper = document.querySelector('#time-keeper');
 
-//need input text value
-$task = document.querySelector('input');
+// Create h1
+$newh1 = document.createElement('h1');
+$newh1.textContent="Currently working on..."
+$timeKeeper.appendChild($newh1)
 
+//create h3
+$newh3 = document.createElement('h3');
+$newh3.setAttribute('id', 'currentTask');
+$newh3.textContent="//input box value//";
+$timeKeeper.appendChild($newh3);
 
-// Start Button event listener
-$startbtn.addEventListener('click', startTimer);
-
-// function to display currently working on
-var currentTask = function () {
-  $Notification = document.createElement('h1');
-  $Notification.innerHTML = "Currently Working on..." + $task.value;
-  document.body.appendChild($Notification);
-  $task.value = null;
-
-}
-
-time = 0;
-// Create Timer
-var countDown = function {
-  console.log(time);
-  time = time - 1;
-}
+// create h2
+$newh2 = document.createElement('h2');
+$newh2.innerHTML = 'Time Left: <span id="timerMinutes"> 25</span>minutes <span id="timerSeconds">59 </span>seconds';
+$timeKeeper.appendChild($newh2);

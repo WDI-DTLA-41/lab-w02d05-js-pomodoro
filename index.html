@@ -5,8 +5,13 @@
   <title>Pomodoro Techinque</title>
 </head>
 <body>
-  <input placeholder="Add a Task">
+  <input id="input-box" placeholder="Add a Task">
   <button id="start-button">Start</button>
+  <div id="time-keeper">
+    <h1>Currently working on...</h1>
+    <h3 id="currentTask">The First Task</h3>
+    <h2>Time Left: <span id="timerMinutes">25</span>minutes <span id="timerSeconds">59 </span>seconds</h2>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
