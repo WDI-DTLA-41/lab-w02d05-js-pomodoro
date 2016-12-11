@@ -33,6 +33,7 @@ var startTimer = function() {
     clearInterval(timerId) // stop the timer
     pCurrentWork.innerHTML = "Completed tasks: " + task.value;
     var takeBreak = document.createElement('p');
+    takeBreak.setAttribute('id','break');
     takeBreak.innerHTML = 'Take a break!';
     taskContainer.appendChild(takeBreak);
     handleStart5min();
@@ -51,7 +52,12 @@ var startFiveMinTimer = function() {
   number = 5;
   pCurrentWork.innerHTML = '';
   pCurrentWork.innerHTML = "Currently working on...";
+  var takeBreak = document.querySelector('#break');
+  takeBreak.innerHTML = '';
   handleStart();
+  timerId2 = null;
+  number2 = 5;
+  handleStart5min();
   }
   timer.textContent = "Starting again in " + number2 + " in seconds";
 };
