@@ -1,14 +1,21 @@
 
 
-body (
-
-  )
-
-
-
-#addTask {
+body {
 
 }
-#showTask {
 
+#input {
+
+}
+.class {
+
+}
+#taskDisplay {
+
+}
+#taskToggle {
+
+}
+p.showMsg {
+  display:none;
 }

@@ -3,18 +3,19 @@
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Pomodoro</title>
+
 </head>
 <body>
 
-  <div id="container">
+  <!--<div id="container">-->
 
-      <input type="text" id="addTask" name="task" placeholder="Enter new task">
-      <button onclick="showTask" type="button">Start</button>
+      <input id="taskField" class="task" placeholder="Enter new task">
+      <button id="taskToggle">Start</button>
 
-      <p class="message"><span id="showTask"></span></p>
+      <p id="taskDisplay" class="message"></p>
       <h1 class="countDown">Timer is here</h1>
 
-  </div>
+  <!--</div>-->
 
     <script src="main.js"></script>
 </body>

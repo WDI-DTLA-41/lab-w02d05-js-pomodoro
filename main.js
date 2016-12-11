@@ -1,34 +1,84 @@
 
 console.log('see me?');
 
-// document.body.addEventListener('click', function(info){
-
-//       console.log('you clicked me', info);
-//       console.log(info.target);
-//       console.log(info.currentTarget);
-
-// });
 
 
-
-
-var input = document.querySelector('input');
-function showTask() {
-    var x = document.getElementById("addTask").value;
-    document.getElementById("showTask").innerHTML = x;
-    return showTask();
-}
+// declaring the variable first, reference on line 24
+var taskInput = {};
+// taskToggleBtn is the object
+var taskToggleBtn = document.getElementById('taskToggle');
+var taskRunning = false;
+// timer stuff here - declare what it needs to do before func kicks off
 
 
 
-var btn = document.querySelector('button');
-btn.addEventlistener('click',showInput);
-btn = function() {
-  return showTask;
-}
+
+var startTask = function(event){
+
+      if (taskRunning) {
+        // stop logic
+        console.log('Stop');
+        taskRunning = false;
+      }
+        else {//start logic
+
+        var input = document.getElementById('taskField');
+        console.log(input.value);
+        // when clicked this is chunk of func executed. input.value is an object
+        document.getElementById('taskDisplay').innerHTML = '<p>Currently working on ' + input.value + '.</p>';
+        taskToggleBtn.innerHTML = 'Take a break';
+
+       console.log('Start');
+       taskRunning = true;
+
+        }
+
+
+} // end startTask
+
+
+// showMsg referenced
+// the event listener assignment
+taskToggleBtn.addEventListener('click',startTask);
 
 
 
+
+
+
+
+//
+
+
+
+// <p id="showMsg" class="message"> <span id="showTask"></span></p>
+
+
+
+// function showTask() {
+//     var x = document.getElementById("#addTask").value;
+//     console.log(input.value);
+//     // document.getElementById("showTask").innerHTML = x;
+//     // return showTask();
+// }
+
+
+
+// var btn = document.querySelector('button');
+// btn.addEventlistener('click',showInput);
+// btn = function() {
+//   return showTask;
+// }
+
+
+// set up first timer
+
+// this returns an ID we can clear with clearTimeout
+
+// setTimeout(function() {
+//     console.log('surprise');
+
+// },2000);
 
 
 
@@ -96,30 +146,25 @@ btn = function() {
 
 // })
 
-// // function to display message when Start btn is clicked
-// var showDiv = document.querySelector('#showDiv');
-// showDiv = function() {
-//     div.textContent = "Started working on ... ";
-//     return showDiv;
+// function to display message when Start btn is clicked
+var showDiv = document.querySelector('#container');
+showDiv = function() {
+  document.querySelector('div');
+    div.textContent.innerHTML = "Started working on ... ";
+    return showDiv;
 
-// }
-
-
-
+}
 
 
 
-// this returns an ID we can clear with clearTimeout
-// this WORKS
-// setTimeout(function() {
-//     console.log('surprise');
 
-// },2000);
 
-// //how to tell it in two minutes say 'something'
-// setTimeout(function() {
-//     console.log('back to work');
-// }, 2 * 60 * 1000   // says 60 * 1000 = 1 min times 2 = 2 min
-// )
+
+
+//how to tell it in two minutes say 'something'
+setTimeout(function() {
+    console.log('back to work');
+}, 2 * 60 * 1000   // says 60 * 1000 = 1 min times 2 = 2 min
+)
 
 
