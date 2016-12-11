@@ -1,9 +1,9 @@
-console.log("Can't rain all the time");
+console.log("It can't rain all the time");
 
 // grabbng DOM nodes
 var btn = document.querySelector('button');
 var pCurrentWork = document.querySelector('p');
-var number = 5; //gonna be 25*60
+var number = 10; //gonna be 25*60
 var number2 = 5;
 var task = document.querySelector('input');
 var timer = document.querySelector('#timer');
@@ -15,11 +15,11 @@ var timerId2 = null;
 
 
 // create Start Timers
-var handleStart = function() {
-  timerId = setInterval(startTimer, 1000);
-  pCurrentWork.innerHTML = pCurrentWork.textContent + task.value;
+ var handleStart = function() {
+    timerId = setInterval(startTimer, 1000);
+    pCurrentWork.innerHTML = pCurrentWork.textContent + task.value;
+    btn.removeEventListener('click', handleStart);
   };
-
 
 var handleStart5min = function() {
   timerId2 = setInterval(startFiveMinTimer, 1000);
@@ -37,30 +37,30 @@ var startTimer = function() {
     takeBreak.innerHTML = 'Take a break!';
     taskContainer.appendChild(takeBreak);
     handleStart5min();
-  }
-  timer.textContent = number + ' in seconds';
+    timerId = null;
+    number = 10;
+  };
+    timer.textContent = number + ' in seconds';
 };
-
 
 // function to start a five min timer
 var startFiveMinTimer = function() {
   number2 = number2 - 1;
   if (number2 === 0) {
     clearInterval(timerId2);
-    console.log('done');
-  timerId = null;
-  number = 5;
   pCurrentWork.innerHTML = '';
-  pCurrentWork.innerHTML = "Currently working on...";
+  pCurrentWork.innerHTML = "Currently working on..."
   var takeBreak = document.querySelector('#break');
   takeBreak.innerHTML = '';
+  clearInput();
   handleStart();
   timerId2 = null;
   number2 = 5;
-  handleStart5min();
   }
   timer.textContent = "Starting again in " + number2 + " in seconds";
 };
+
+
 
 
 // function to clear input field
