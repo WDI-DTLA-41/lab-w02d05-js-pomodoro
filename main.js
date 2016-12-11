@@ -3,45 +3,66 @@ var taskInput = document.querySelector('.task-input');
 var task = document.querySelector('.task');
 var mins = document.querySelector('.mins');
 var secs = document.querySelector('.secs');
-var largeIntMin = 25;
-var largeIntSec = largeIntMin / 60;
-var smallIntMin = 5;
-var breakIntMin = 15;
+var largeInt = 25;
+// var largeIntSec = 60;
+var smallInt = 5;
+var breakInt = 15;
+var called = false;
 
 //large interval countdown function
-var countDownLrgMin = function(){
-  largeIntMin--;
-  mins.textContent = largeIntMin;
+var countDownLrg = function(){
+  called = true;
+  largeInt--;
+  mins.textContent = largeInt;
 }
-var countDownLrgSec = function(){
-  largeIntSec--;
-  secs.textContent = largeIntMin;
-}
+
 //small interval countdown function
 var countDownSml = function(){
-  smallIntMin--;
-  mins.textContent = smallIntMin;
+  smallInt--;
+  mins.textContent = smallInt;
 }
 //break interval countdown function
 var countDownBrk = function(){
-  breakIntMin--;
-  mins.textContent = breakIntMin;
+  breakInt--;
+  mins.textContent = breakInt;
 }
 
+taskInput.addEventListener('keyup', function(e){
+  task.textContent = ' ' + e.target.value + '.';
+  if (e.keyCode === 13){
+    taskInput.value = '';
+  }
+});
 
 //large interval timer start
 var startLrgInt = function(e){
-  startBtn.removeEventListener('click', startLrgInt);
-  lrgIntTimerMin = setInterval(countDownLrgMin, 1000);
-  lrgIntTimerSec = setInterval(countDownLrgSec, 10);
-  // ??? startSmlInt = setTimeout(setInterval(countDownSml, 1000), largeInt * 1000);
+      startBtn.removeEventListener('click', startLrgInt);
+      lrgIntTimer = setInterval(countDownLrg, 1000);
 }
 startBtn.addEventListener('click', startLrgInt);
 
 
 //small interval timer start
-var startSmlInt = function(e){
-  startSmlInt = setInterval(countDownSml, 1000);
-}
+// var startSmlInt = function(e){
+//   startSmlInt = setInterval(countDownSml, 1000);
+// }
+
+    // clearInterval(lrgIntTimer);
+    // smallIntTimer = setInterval(countDownSml, 1000);
 
 
+
+
+
+
+
+
+
+
+
+// var countDownLrgSec = function(){
+//   for(i=0;i<largeIntMin;i++){
+//     largeIntSec--;
+//     secs.textContent = largeIntSec;
+//   }
+// }
