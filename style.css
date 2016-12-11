@@ -1,7 +1,10 @@
 body {
-  background-color: grey;
+  background-color: orange;
 }
 h1 {
+  text-align: center;
+}
+h2 {
   text-align: center;
 }
 div {
@@ -9,4 +12,5 @@ div {
 }
 p {
   text-align: center;
+  font: 24px arial;
 }
