@@ -29,6 +29,8 @@ $startButton.addEventListener('click', displayTaskandStartTimer);
 
 // Start 25 Minute timer //
 var clockStart = function () {
+  myAudio = new Audio ('Tetrishead.mp3');
+  myAudio.play();
   clockId = setInterval(countDown,1000);
 }
 
@@ -67,7 +69,6 @@ var countDown = function() {
         clockId = setInterval(fiveMinCoolDown, 1000);
       };
 
-  return timerSeconds;
 };
 
 
@@ -95,9 +96,9 @@ var createTaskandTimer = function () {
   document.getElementById('timerSeconds').innerHTML = timerSeconds;
 };
 
+
 // Completed tasks, Take a break and 5 minute cool down
 // Completed Task:
-
 // 5 minute cool down function
 var fiveMinCoolDown = function () {
 
@@ -132,13 +133,13 @@ var fiveMinCoolDown = function () {
 
 // Completed Tasks Function
 var completedTasks = function () {
-$newUl = document.createElement('ul');
-$newUl.innerHTML = "Completed Tasks:"
-$newLi = document.createElement('li');
-$newLi.innerHTML = document.getElementById('currentTask').innerHTML;
-document.getElementById('currentTask').innerHTML = null;
-$newUl.appendChild($newLi);
-$timeKeeper.appendChild($newUl);
+  $newUl = document.createElement('ul');
+  $newUl.innerHTML = "Completed Tasks:"
+  $newLi = document.createElement('li');
+  $newLi.innerHTML = document.getElementById('currentTask').innerHTML;
+  document.getElementById('currentTask').innerHTML = null;
+  $newUl.appendChild($newLi);
+  $timeKeeper.appendChild($newUl);
 
 };
 
