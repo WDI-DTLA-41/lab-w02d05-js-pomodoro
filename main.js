@@ -50,7 +50,12 @@ var twentyFiveMins = function(mins) {
   clockFace.textContent = (minutes + ":" + seconds);
   }, 1000);
 
-  timeoutId = setTimeout(function(seconds){
+  secondReset = setTimeout(function(){
+    seconds = 60;
+    clockFace.textContent = (minutes + ":" + seconds);
+  }, 60000)
+
+  timeoutId = setTimeout(function(){
     minutes = 00;
     seconds = 00;
     clearInterval(secondsId);
@@ -71,6 +76,8 @@ var handleClick = function(event) {
 
   if (event.target === startButton) {
     twentyFiveMins(25);
+    startButton.removeEventListener('click', handleClick)
+
   }
 // console.log('clicked');
 }
