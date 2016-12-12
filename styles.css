@@ -1,0 +1,26 @@
+
+
+body {
+
+}
+
+#input {
+
+}
+.class {
+
+}
+/* id set on p tag */
+#taskDisplay {
+
+}
+#taskToggle {
+
+}
+/*p.showMsg {
+  display:none;
+}*/
+/* used in h1 tag for counter */
+h1.countDown {
+  display:none;
+}
