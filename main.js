@@ -3,7 +3,7 @@ console.log('see me?');
 
 
 
-// declaring the variable first, reference on line 24
+// declaring the variable first as an object, reference on line 24
 var taskInput = {};
 // taskToggleBtn is the object
 var taskToggleBtn = document.getElementById('taskToggle');
