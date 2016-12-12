@@ -10,7 +10,10 @@ button{
   padding: 4px;
 }
 .timer {
-  background: gold;
+  background: white;
   height: 50px;
   width: 30%;
+}
+.task {
+  text-transform: uppercase;
 }
