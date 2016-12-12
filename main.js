@@ -14,6 +14,9 @@ var countDownLrg = function(){
   called = true;
   largeInt--;
   mins.textContent = largeInt;
+  if (largeInt === 0){
+    clearInterval(lrgIntTimer);
+  }
 }
 
 //small interval countdown function
@@ -37,7 +40,7 @@ taskInput.addEventListener('keyup', function(e){
 //large interval timer start
 var startLrgInt = function(e){
       startBtn.removeEventListener('click', startLrgInt);
-      lrgIntTimer = setInterval(countDownLrg, 1000);
+      lrgIntTimer = setInterval(countDownLrg, 500);
 }
 startBtn.addEventListener('click', startLrgInt);
 
