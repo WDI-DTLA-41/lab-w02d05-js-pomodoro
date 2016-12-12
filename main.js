@@ -4,7 +4,7 @@ console.log('aloha!');
 // a counter decreasing from 25 minutes
 // ================================================================
 var timer = document.body.querySelector('div');
-var mins = 1; // total amount of minutes to countdown
+var mins = 25; // total amount of minutes to countdown
 var secs = mins * 60; // coverts total countdown minutes to seconds
 var timerMins = 0; //
 var timerSecs = 0;
