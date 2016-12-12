@@ -8,17 +8,63 @@ var taskInput = {};
 // taskToggleBtn is the object
 var taskToggleBtn = document.getElementById('taskToggle');
 var taskRunning = false;
+
 // timer stuff here - declare what it needs to do before func kicks off
+// first timer for 25 min
+
+var timerId = null;
+// how to render the # to the DOM: queries the DOM *******
+var h1 = document.querySelector('h1');
+
+//============
+// start first timer here
+var startTimer = 0;
+var number = 0;
+var timerId = null;
+// how to render the # to the DOM: queries the DOM *******
+var h1 = document.querySelector('h1');
+
+
+// THIS WORKS
+var number = 2501;
+var countDown = function() {
+    number = number - 1;
+    console.log(number);
+    // if number is equal to 0
+    // stop timer by clearing the interval call clearInterval
+    if (number === 0) {         // this is COOL! stops it
+      clearInterval(timerId);
+    }
+    // set TEXT CONTENT here ********
+    h1.textContent = number;
+    h1.style.display='block'; // doesn't work
+    //document.querySelector('h1').style.display = "block";
+    return number;
+
+}
+ countDown();      // how you invoke a func
+
+// assign a button to start countdown in html
+// THIS WORKS
+var btn = document.querySelector('button');
+btn.addEventListener('click', function(evt) {
+    timerId = setInterval(countDown,1000);   // access global var and
+                                              // accesses id
+    btn.removeEventListener('click',startTimer); // how to stop
+});
+btn.addEventListener('click', startTimer);
 
 
 
-
+// start first task
 var startTask = function(event){
 
       if (taskRunning) {
         // stop logic
         console.log('Stop');
         taskRunning = false;
+
+
       }
         else {//start logic
 
@@ -28,8 +74,8 @@ var startTask = function(event){
         document.getElementById('taskDisplay').innerHTML = '<p>Currently working on ' + input.value + '.</p>';
         taskToggleBtn.innerHTML = 'Take a break';
 
-       console.log('Start');
-       taskRunning = true;
+         console.log('Start');
+         taskRunning = true;
 
         }
 
@@ -44,116 +90,14 @@ taskToggleBtn.addEventListener('click',startTask);
 
 
 
-
-
-
-//
-
-
-
-// <p id="showMsg" class="message"> <span id="showTask"></span></p>
-
-
-
-// function showTask() {
-//     var x = document.getElementById("#addTask").value;
-//     console.log(input.value);
-//     // document.getElementById("showTask").innerHTML = x;
-//     // return showTask();
-// }
-
-
-
-// var btn = document.querySelector('button');
-// btn.addEventlistener('click',showInput);
-// btn = function() {
-//   return showTask;
-// }
-
-
-// set up first timer
-
-// this returns an ID we can clear with clearTimeout
-
-// setTimeout(function() {
-//     console.log('surprise');
-
-// },2000);
-
-
-
-
-// show what was input on screen
-//var displayTask = document.querySelector('input');
-// displayTask = function(evt) {
-//     //input.addEventlistener.
+// // function to display message when Start btn is clicked
+// var showDiv = document.querySelector('#container');
+// showDiv = function() {
+//   document.querySelector('div');
+//     div.textContent.innerHTML = "Started working on ... ";
+//     return showDiv;
 
 // }
-
-// // // 2 - write function that takes an event
-// // // 3 - if you want to do something to 'what' you clicked on use Event.target
-// var displayInput = function(event) {
-// //  // give the function a parm for the event object.
-// //  // 4 - if you wnt to do something to what you clicked on use event.target
-//  console.log(event.target, event.target.value, event.keyCode)
-// // // 5- pick event string you want to trigger it with
-// // // 6 - add event listener to queried node to queried node
-// // // 7 - give it the event string and the callback function
-// input.addEventListener(keypress, handleKeyPress);
-
-//     var input = document.querySelector('input');
-//     var handleKeyPress = function(event) {
-//       console.log(event.target, event.target.value, event.keyCode)
-//     }
-//     input.addEventListener('keypress', handleKeyPress);
-// }
-
-
-
-// var handleKeyPress = function(event) {
-//     console.log(event.target, event.target.value,event.KeyCode)
-
-// }
-
-
-
-
-// query the DOM to have h1 replaced by timer
-// var h1 = document.querySelector('h1');
-// // used to show message
-
-// // used to show timer displayed
-// var number = 0;
-
-// var number = 5;
-// var countDown = function() {
-//     number = number - 1;
-//     console.log(number);
-//     // if number equals zero stop
-//     // if (number === 0) {
-//     //   clearInterval(timerId);
-//     // }
-//     // // set h1 to hold the timer
-//     // h1.textContent = number;
-//     // return number;
-
-// }
-// put event listener on Start button
-// var btn = document.querySelector('button');
-// btn.addEventListener('click',function(evt) {
-//     displayMsg.querySelector('#showMsg').style.display = "block";
-
-
-// })
-
-// function to display message when Start btn is clicked
-var showDiv = document.querySelector('#container');
-showDiv = function() {
-  document.querySelector('div');
-    div.textContent.innerHTML = "Started working on ... ";
-    return showDiv;
-
-}
 
 
 
@@ -162,9 +106,9 @@ showDiv = function() {
 
 
 //how to tell it in two minutes say 'something'
-setTimeout(function() {
-    console.log('back to work');
-}, 2 * 60 * 1000   // says 60 * 1000 = 1 min times 2 = 2 min
-)
+// setTimeout(function() {
+//     console.log('back to work');
+// }, 2 * 60 * 1000   // says 60 * 1000 = 1 min times 2 = 2 min
+// )
 
 
