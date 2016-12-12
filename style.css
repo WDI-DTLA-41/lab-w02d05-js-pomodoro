@@ -1,0 +1,24 @@
+#home-page {
+  text-align: center;
+}
+
+.oneGone {
+  display: none;
+}
+
+.twoHere {
+  /*background: pink;*/
+  text-align: center;
+  margin-top: 10%;
+  font-size: 20px;
+}
+
+.threeHere {
+  justify-content: center;
+}
+
+.twoHere .threeHere {
+  margin: auto;
+  margin-top: 5%;
+}
+
