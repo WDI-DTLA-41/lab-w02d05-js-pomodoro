@@ -43,17 +43,17 @@ var twentyFiveMins = function(mins) {
   var minutesId = setInterval(function(){
   minutes -= 1;
   clockFace.textContent = (minutes + ":" + seconds);
-  }, 60000);
+  }, 60000 / 120); // divided by 120 to speed up timers
 
   var secondsId = setInterval(function(){
   seconds = seconds - 1;
   clockFace.textContent = (minutes + ":" + seconds);
-  }, 1000);
+  }, 1000 / 120);
 
   secondReset = setTimeout(function(){
     seconds = 60;
     clockFace.textContent = (minutes + ":" + seconds);
-  }, 60000)
+  }, 60000 / 120)
 
   timeoutId = setTimeout(function(){
     minutes = 00;
@@ -61,7 +61,7 @@ var twentyFiveMins = function(mins) {
     clearInterval(secondsId);
     clearInterval(minutesId);
     clockFace.textContent = (minutes + ":" + seconds);
-  }, 25 * 60000)
+  }, (25 * 60000) / 120)
 }
 
 
@@ -77,7 +77,6 @@ var handleClick = function(event) {
   if (event.target === startButton) {
     twentyFiveMins(25);
     startButton.removeEventListener('click', handleClick)
-
   }
 // console.log('clicked');
 }
