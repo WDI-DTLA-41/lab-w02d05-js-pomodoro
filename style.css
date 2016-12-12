@@ -1,0 +1,11 @@
+body {
+  background-color: teal;
+  margin-top: 200px;
+
+  text-align: center;
+}
+
+#time-keeper {
+  background-color: beige;
+  margin: 4em 25%;
+}
