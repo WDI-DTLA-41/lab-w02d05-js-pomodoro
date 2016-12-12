@@ -8,6 +8,8 @@ $startButton = document.querySelector('#start-button');
 // Time-Keeper area
 $timeKeeper = document.querySelector('#time-keeper');
 
+var timerMinutes = 0;
+var timerSeconds = 10;
 
 var displayTaskandStartTimer = function () {
   if ($inputBox.value === "") {
@@ -25,10 +27,11 @@ var displayTaskandStartTimer = function () {
 $startButton.addEventListener('click', displayTaskandStartTimer);
 
 
-// Start Create timer //
+// Start 25 Minute timer //
 var clockStart = function () {
   clockId = setInterval(countDown,1000);
 }
+
 
 //timer Second logic
 var countDown = function() {
@@ -57,6 +60,11 @@ var countDown = function() {
       } else {
         console.log('stop here');
         clearInterval(clockId);
+        document.querySelector('h1').innerHTML = "Take a Break!";
+        completedTasks();
+        timerMinutes = 5;
+        timerSeconds = 0;
+        clockId = setInterval(fiveMinCoolDown, 1000);
       };
 
   return timerSeconds;
@@ -83,8 +91,55 @@ var createTaskandTimer = function () {
   $newh2 = document.createElement('h2');
   $newh2.innerHTML = 'Time Left: <span id="timerMinutes"></span> minutes <span id="timerSeconds"></span> seconds';
   $timeKeeper.appendChild($newh2);
-  timerMinutes = 25;
-  timerSeconds = 0;
   document.getElementById('timerMinutes').innerHTML = timerMinutes;
   document.getElementById('timerSeconds').innerHTML = timerSeconds;
 };
+
+// Completed tasks, Take a break and 5 minute cool down
+// Completed Task:
+
+// 5 minute cool down function
+var fiveMinCoolDown = function () {
+
+  console.log('Time: ' + timerMinutes + ' Minutes ' + timerSeconds + ' Seconds');
+  if (timerMinutes !== 0 && timerSeconds == 0) {
+    timerSeconds = 59;
+    $timerSecondsSpan.innerHTML = timerSeconds;
+    timerMinutes = timerMinutes - 1;
+    $timerMinutesSpan.innerHTML = timerMinutes;
+    console.log ('minutes are not 0 seconds are 0');
+    return true;
+  };
+
+  if (timerMinutes !== 0 && timerSeconds !== 0) {
+    console.log ('not zero for both');
+    timerSeconds = timerSeconds - 1;
+    $timerSecondsSpan.innerHTML = timerSeconds;
+    return true;
+  };
+
+  if (timerMinutes == 0 && timerSeconds !== 0) {
+      console.log ('minutes are zero seconds are not');
+      timerSeconds = timerSeconds - 1;
+      $timerSecondsSpan.innerHTML = timerSeconds;
+      return true;
+      } else {
+        console.log('stop here');
+        clearInterval(clockId);
+      };
+
+};
+
+// Completed Tasks Function
+var completedTasks = function () {
+$newUl = document.createElement('ul');
+$newUl.innerHTML = "Completed Tasks:"
+$newLi = document.createElement('li');
+$newLi.innerHTML = document.getElementById('currentTask').innerHTML;
+document.getElementById('currentTask').innerHTML = null;
+$newUl.appendChild($newLi);
+$timeKeeper.appendChild($newUl);
+
+};
+
+
