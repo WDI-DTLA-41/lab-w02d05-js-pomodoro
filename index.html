@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro 4 Scrubs</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+  <header class="header-wrapper">
+    <h1 id="logo">Pomodoro 4 Scrubs</h1>
+  </header>
+  <div class="body-wrapper">
+    <div class="input-area">
+      <h2 class="question">What would you like to work on for 25 minutes?</h2>
+      <form>
+        <input type="text" placeholder="Enter task" name="input-value">
+        <button type="button" name="start">Start</button>
+      </form>
+    </div>
+    <div class="quick-break">
+      <h2>QUICK BREAK!!!</h2>
+    </div>
+    <div class="content-wrapper">
+      <p class="working-stuff">Currently working on: <span class="current-work">Absolutely Nothing</span></p>
+      <div class="display">
+        <p class="displayed-time"><!-- 25m : 0s --></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
