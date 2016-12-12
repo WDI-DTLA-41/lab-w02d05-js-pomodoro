@@ -1,0 +1,151 @@
+body {
+  /*background: rgba(0,0,0,0);*/
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  top: 0px;
+  background: #f53229;
+  /*height: 160px;*/
+  /*border-bottom: 1px solid black;*/
+  box-shadow: 0 2px 10px gray;
+  /*line-height: 80px*/
+  z-index: 99;
+  height: 80px;
+  line-height: 80px;
+  transition: 1s ease;
+}
+
+header:hover {
+  background: #FF827B;
+  /*box-shadow: 0 2px 10px gray;*/
+}
+
+#logo {
+  width: 50%;
+  text-align: center;
+  font-size: 2em;
+  /*height: 40px;*/
+  line-height: 80px;
+  /*vertical-align: middle;*/
+  margin: 0 auto;
+  color: #FCFFF5;
+  transition: .3s ease;
+  letter-spacing: .08em;
+  /*position: fixed;*/
+  /*background: blue;*/
+}
+
+#logo:hover {
+  /*color: rgba(62, 96, 111, 1);*/
+  /*cursor: pointer;*/
+  /*background: white;*/
+}
+
+.body-wrapper {
+  top: 100px;
+  position: relative;
+  /*background: blue;*/
+}
+
+.input-area {
+  width: 70%;
+  margin: 0 auto;
+  /*background: blue;*/
+  height: 160px;
+}
+
+h2 {
+  /*background: gray;*/
+  /*display: inline-block;*/
+  text-align: center;
+  font-weight: 800;
+  /*color: #860047;*/
+  /*margin: 0 auto;*/
+}
+
+form {
+  display: block;
+  /*float: right;*/
+  margin: 5px;
+  text-align: center;
+  /*transition: 1s;*/
+}
+
+input[name="input-value"] {
+  width: 500px;
+  height: 40px;
+  text-align: center;
+  border: .1em solid #91AA9D;
+  /*vertical-align: middle;*/
+  /*margin: 4px 0 0 0 ;*/
+  /*background: #D1DBBD;*/
+  font-size: 1.5em;
+}
+
+input[name="input-value"]:focus {
+    outline: none;
+    border-color: #91AA9D;
+    box-shadow: 0 0 10px #91AA9D;
+}
+
+.error {
+  outline: none;
+  border-color: red;
+  box-shadow: 0 0 10px red;
+
+}
+
+button[name="start"] {
+  height: 40px;
+  width: 250px;
+  margin: 20px auto;
+  text-align: center;
+  display: block;
+  line-height: 33px;
+  /*vertical-align: middle;*/
+  /*float: right;*/
+  background: white;
+  border-color: #91AA9D;
+  outline: none;
+  cursor: pointer;
+}
+
+.display {
+background: rgba(255, 130, 123, .4);
+height: 3em;
+width: 20em;
+/*line-height: 3em;*/
+border: .1em solid #91AA9D;
+text-align: center;
+vertical-align: middle;
+font-size: 20px;
+margin: 0 auto;
+/*transition: 1s;*/
+}
+
+.hidden {
+  visibility: hidden;
+  /*transition: 1s;*/
+
+}
+
+.content-wrapper {
+  margin-top: 90px;
+  text-align: center;
+  visibility: hidden;
+  /*transition: 2s;*/
+}
+
+.working-stuff {
+  font-size: 20px;
+}
+
+.quick-break {
+  position: relative;
+  visibility: hidden;
+}
