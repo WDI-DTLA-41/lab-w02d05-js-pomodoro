@@ -103,7 +103,7 @@ function countDownMinutes(){
 
       if(tasks.length===4){
         complete.innerHTML = 'Completed Tasks: ' + tasks[tasks.length-1] + '<br><br>You completed 4 tasks! Take a long Break!';
-        takeBreak(1);
+        takeBreak(pomodoroBreak);
       } else {
         complete.innerHTML = 'Completed Tasks: ' + tasks[tasks.length-1] + '<br><br>Take a Break!';
         takeBreak(defaultBreakMins);
