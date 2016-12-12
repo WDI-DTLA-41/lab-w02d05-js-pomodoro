@@ -31,3 +31,11 @@ li {
 .working {
   margin-left: 15%;
 }
+
+.active {
+text-decoration: line-through;
+}
+
+.complete {
+  margin-left: 15%;
+}
