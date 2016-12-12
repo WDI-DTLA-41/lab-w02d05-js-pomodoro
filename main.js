@@ -53,9 +53,6 @@ var startFiveMinTimer = function() {
   var takeBreak = document.querySelector('#break');
   takeBreak.innerHTML = '';
   clearInput();
-  handleStart();
-  timerId2 = null;
-  number2 = 5;
   }
   timer.textContent = "Starting again in " + number2 + " in seconds";
 };
