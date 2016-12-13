@@ -70,7 +70,7 @@ var startTimer = function(event) {
   $task.value = '';
   minutes = 25;
   seconds = 60;
-  timerId = setInterval(countDown, 10);
+  timerId = setInterval(countDown, 1000);
   $startBtn.removeEventListener('click', startTimer);
 }
 
