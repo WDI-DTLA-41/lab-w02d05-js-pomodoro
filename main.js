@@ -9,6 +9,7 @@ var minute = 24;
 var second = 60;
 
 var handleInput = function(event){
+  document.querySelectorAll('.tempHide').classList.remove('tempHide');
   inputVal = document.querySelector('input').value;
   currentTask.textContent = inputVal;
   var minuteId = setInterval(minuteCount, (1000*60));
