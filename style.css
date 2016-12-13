@@ -1,0 +1,32 @@
+body {
+  background: #7c9823;
+}
+
+.dummy {
+  background: #4b1e67;
+  color: white;
+  margin: 0 5% 0 20%;
+  width: 45%;
+  height: 80px;
+  float:left;
+  display: inline-block;
+}
+
+.dummytimer {
+  background: #15c1bb;
+  color: white;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+/*.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}*/
+
+
