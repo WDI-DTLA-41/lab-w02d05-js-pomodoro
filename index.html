@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="utf-8">
   <title>Pomodoro App</title>
 </head>
 <body>
 <div class="currentlyWorkingOn">
 <input type="text" name="addTask" value="" placeholder="  add a task">
 <button type="text" id="start">Start</button>
+<br><br>
+<div class="tempHide">Current Task: <span id="currentTask"></span></div>
+<div class="tempHide timer"><span id="byMinute">24</span>:<span id="bySecond">59</span></div>
 </div>
+<script src="main.js" type="text/javascript"></script>
 </body>
 </html>
