@@ -19,6 +19,15 @@ button {
   border:none;
 }
 
+button:hover{
+  background-color:#008CBA;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #4CAF50;
+}
+
 .workin {
   border-bottom: 2px solid white;
   padding-bottom: 3px;
@@ -37,7 +46,12 @@ input {
 #clock {
   text-align: center;
   font-size:8em;
+  margin: 0 auto;
   margin-top: .5em;
+  border: 8px solid white;
+  border-radius: 15px;
+  width: 3em;
+  background-color: #3d3d3d;
 }
 
 #user-input {
@@ -48,4 +62,9 @@ input {
 
 #task {
  /* border-bottom: 1px solid white;*/
+}
+
+
+#test {
+
 }
