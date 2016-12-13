@@ -27,11 +27,14 @@ var countDown = function () {
   }
   //display timer as "mm:ss"
   timer.innerHTML = timerMins + ":" + timerSecs;
+
 }
+
 
 // when timerMins < 1 && timerSecs <=9
 // numbers show as red
-timer.classList.add('red');
+//  if (mins < 1)
+    // timer.classList.add('red');
 
 // ================================================================
 // the timer should stop at OO:00 and alert user to take a break
